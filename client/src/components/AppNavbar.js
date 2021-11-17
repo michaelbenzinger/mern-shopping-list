@@ -7,6 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink,
+  Container,
 } from 'reactstrap';
 
 function AppNavbar() {
@@ -18,7 +19,8 @@ function AppNavbar() {
 
   return (
     <div>
-      <Navbar color="dark" dark expand="sm" className="mb-5">
+      <Navbar container="sm" color="dark" dark expand="sm" className="mb-5">
+        {/* <Container> */}
         <NavbarBrand href="/">ShoppingList</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
@@ -30,6 +32,7 @@ function AppNavbar() {
             </NavItem>
           </Nav>
         </Collapse>
+        {/* </Container> */}
       </Navbar>
     </div>
   );

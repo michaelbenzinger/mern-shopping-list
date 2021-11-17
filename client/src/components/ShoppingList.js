@@ -12,23 +12,23 @@ function ShoppingList(props) {
 
   const { items } = props.item;
 
-  const onDeleteClick = id => {
-    props.deleteItem(id);
+  const onDeleteClick = _id => {
+    props.deleteItem(_id);
   };
 
   return (
     <Container>
       <ListGroup>
         <TransitionGroup className="shopping-list">
-          {items.map(({ id, name }) => (
-            <CSSTransition key={id} timeout={500} classNames="fade">
+          {items.map(({ _id, name }) => (
+            <CSSTransition key={_id} timeout={500} classNames="fade">
               <ListGroupItem>
                 <Button
                   className="remove-btn me-2"
                   color="danger"
                   size="sm"
                   onClick={() => {
-                    onDeleteClick(id);
+                    onDeleteClick(_id);
                   }}
                 >
                   &times;
