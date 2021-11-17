@@ -6,11 +6,11 @@ import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
 function ShoppingList(props) {
+  const { items } = props.item;
+
   useEffect(() => {
     props.getItems();
-  }, []);
-
-  const { items } = props.item;
+  }, [props]);
 
   const onDeleteClick = _id => {
     props.deleteItem(_id);

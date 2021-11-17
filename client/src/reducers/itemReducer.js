@@ -1,4 +1,3 @@
-import { v4 as uuid } from 'uuid';
 import {
   GET_ITEMS,
   ADD_ITEM,
@@ -11,7 +10,7 @@ const initialState = {
   loading: false,
 };
 
-export default function (state = initialState, action) {
+const itemReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_ITEMS:
       return {
@@ -37,4 +36,6 @@ export default function (state = initialState, action) {
     default:
       return state;
   }
-}
+};
+
+export default itemReducer;
