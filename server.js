@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 // DB Config
-const db = require('./config/keys').mongoURI;
+const db = process.env.HEROKU_MONGOURI || require('./config/keys').mongoURI;
 
 // Connect to Mongo
 mongoose
